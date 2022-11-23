@@ -1,6 +1,8 @@
 <img src="https://img.bkood.com/yuque.png" alt="img" style="zoom: 33%;" />
 
-<center> <h5> Yuque for java  SDK  </h5></center>
+<p align="center">
+	<strong>Yuque for java  SDK</strong>
+</p>
 
 ------
 
