@@ -1,7 +1,7 @@
 package com.bkood.yuque.models.update;
 
-import cn.hutool.http.HttpRequest;
 import com.bkood.yuque.common.Config;
+import com.bkood.yuque.common.HttpMethod;
 import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.GroupUser;
@@ -18,10 +18,7 @@ public class UpdateGroupsUsers implements RequestParameters<UpdateGroupsUsersPar
      */
     public static final String URL = "/groups/{0}/users/{1}";
 
-    /**
-     * 请求类
-     */
-    private final HttpRequest request;
+
 
     /**
      * 请求基础构造
@@ -30,12 +27,11 @@ public class UpdateGroupsUsers implements RequestParameters<UpdateGroupsUsersPar
      * @param config {@link Config} 配置
      */
     public UpdateGroupsUsers(String groupLoginOrId, String login, Config config) {
-        this.request = HttpRequest.put(toUrl(config.getBaseUrl(), URL, groupLoginOrId, login));
-        setConfigToRequest(this.request, config);
+        setConfigToRequest(toUrl(config.getBaseUrl(), URL, groupLoginOrId, login), config);
     }
 
     @Override
     public Result<GroupUser> run() {
-        return new Result<>(execute(this.request), GroupUser.class);
+        return new Result<>(execute(HttpMethod.PUT), GroupUser.class);
     }
 }

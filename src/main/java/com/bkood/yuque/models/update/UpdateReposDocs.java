@@ -1,7 +1,7 @@
 package com.bkood.yuque.models.update;
 
-import cn.hutool.http.HttpRequest;
 import com.bkood.yuque.common.Config;
+import com.bkood.yuque.common.HttpMethod;
 import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.DocDetail;
@@ -20,10 +20,7 @@ public class UpdateReposDocs implements RequestParameters<UpdateReposDocParamete
      */
     public static final String URL = "/repos/{0}/docs/{1}";
 
-    /**
-     * 请求类
-     */
-    private final HttpRequest request;
+
 
     /**
      * 请求基础构造
@@ -32,12 +29,11 @@ public class UpdateReposDocs implements RequestParameters<UpdateReposDocParamete
      * @param config {@link Config} 配置
      */
     public UpdateReposDocs(String repoIdOrNamespace, String id, Config config) {
-        this.request = HttpRequest.put(toUrl(config.getBaseUrl(), URL, repoIdOrNamespace, id));
-        setConfigToRequest(this.request, config);
+        setConfigToRequest(toUrl(config.getBaseUrl(), URL, repoIdOrNamespace, id), config);
     }
 
     @Override
     public Result<DocDetail> run() {
-        return new Result<>(execute(this.request), DocDetail.class);
+        return new Result<>(execute(HttpMethod.PUT), DocDetail.class);
     }
 }

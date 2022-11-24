@@ -76,11 +76,11 @@ public class YuQueClientDocTest {
     }
 
     /**
-     * 通过仓库的唯一名称 创建文档
+     * 通过仓库的唯一名称 更新文档
      */
     @Test
     public void testClientUpdateReposDoc() {
-        Result<DocDetail> result = YuQueClient.update(getConfig()).reposDocs("xiaotian-hbdyc/kb", "106811445")
+        Result<DocDetail> result = YuQueClient.update(getConfig()).reposDocs("xiaotian-hbdyc/kb", "107268854")
                 .parameter(UpdateReposDocParameters::getTitle,"标题-Update")
                 .parameter(UpdateReposDocParameters::getSlug,"test-slug-update")
                 .parameter(UpdateReposDocParameters::getBody,"html")
@@ -93,7 +93,7 @@ public class YuQueClientDocTest {
      */
     @Test
     public void testClientReposByNamespace() {
-        Result<DocDetail> result = YuQueClient.delete(getConfig()).reposDocs("xiaotian-hbdyc/kb","106821962").run();
+        Result<DocDetail> result = YuQueClient.delete(getConfig()).reposDocs("xiaotian-hbdyc/kb","106567384").run();
         Assert.assertEquals(200, result.getStatus());
     }
 }

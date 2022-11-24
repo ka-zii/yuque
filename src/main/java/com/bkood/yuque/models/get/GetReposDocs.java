@@ -1,7 +1,7 @@
 package com.bkood.yuque.models.get;
 
-import cn.hutool.http.HttpRequest;
 import com.bkood.yuque.common.Config;
+import com.bkood.yuque.common.HttpMethod;
 import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.ResultList;
 import com.bkood.yuque.entity.Doc;
@@ -18,10 +18,7 @@ public class GetReposDocs implements RequestParameters<QueryReposDocsParameters,
      */
     public static final String URL = "/repos/{0}/docs";
 
-    /**
-     * 请求类
-     */
-    private final HttpRequest request;
+
 
     /**
      * 请求基础构造
@@ -29,12 +26,11 @@ public class GetReposDocs implements RequestParameters<QueryReposDocsParameters,
      * @param config {@link Config} 配置
      */
     public GetReposDocs(String idOrNamespace, Config config) {
-        this.request = HttpRequest.get(toUrl(config.getBaseUrl(), URL, idOrNamespace));
-        setConfigToRequest(this.request, config);
+        setConfigToRequest(toUrl(config.getBaseUrl(), URL, idOrNamespace), config);
     }
 
     @Override
     public ResultList<Doc> run() {
-        return new ResultList<>(execute(this.request), Doc.class);
+        return new ResultList<>(execute(HttpMethod.GET), Doc.class);
     }
 }

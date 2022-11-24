@@ -3,10 +3,7 @@ package com.bkood.yuque.common;
 /**
  * 语雀常量
  */
-public class YuQueConstants {
-
-
-    /**
+public class YuQueConstants {    /**
      * 默认请求URl
      */
     public static final String BASE_URL = "https://www.yuque.com/api/v2";

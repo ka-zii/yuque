@@ -15,17 +15,12 @@ public class RequestParametersTest {
     @Test
     public void testParameter(){
         RequestParametersTestUnit requestParametersTestUnit = new RequestParametersTestUnit();
-        // 测试 bean
-        RequestTestParameters requestTestParameters = new RequestTestParameters();
-        requestTestParameters.setTestBean("testBean");
-        requestParametersTestUnit.parameter(requestTestParameters);
         // 测试 Lambda
         requestParametersTestUnit.parameter(RequestTestParameters::getTest, "test");
         requestParametersTestUnit.parameter(RequestTestParameters::getTestLambda, "testLambda");
         // 测试 k v
         requestParametersTestUnit.parameter("testKey","testValue");
         Map<String, Object> parameters = requestParametersTestUnit.getParameters();
-        Assert.assertEquals("testBean", parameters.get("test_bean"));
         Assert.assertEquals("test", parameters.get("test"));
         Assert.assertEquals("testLambda", parameters.get("test_lambda"));
         Assert.assertEquals("testValue", parameters.get("testKey"));
@@ -42,7 +37,7 @@ public class RequestParametersTest {
             private String testBean;
     }
 
-    public static class RequestParametersTestUnit implements RequestParameters<RequestTestParameters,Object>{
+    public static class RequestParametersTestUnit implements RequestParameters<RequestTestParameters,Object> {
 
         @Override
         public Object run() {

@@ -1,7 +1,7 @@
 package com.bkood.yuque.models.delete;
 
-import cn.hutool.http.HttpRequest;
 import com.bkood.yuque.common.Config;
+import com.bkood.yuque.common.HttpMethod;
 import com.bkood.yuque.common.Request;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.BookDetail;
@@ -17,23 +17,19 @@ public class DeleteRepos implements Request<Result<BookDetail>> {
      */
     public static final String URL = "/repos/{0}";
 
-    /**
-     * 请求类
-     */
-    private final HttpRequest request;
+
 
     /**
      * 请求基础构造
-     * @param idOrNamespace
+     * @param idOrNamespace 用户ID 或 namespace（仓库的唯一名称）
      * @param config {@link Config} 配置
      */
     public DeleteRepos(String idOrNamespace, Config config) {
-        this.request = HttpRequest.delete(toUrl(config.getBaseUrl(), URL, idOrNamespace));
-        setConfigToRequest(this.request, config);
+        setConfigToRequest(toUrl(config.getBaseUrl(), URL, idOrNamespace), config);
     }
 
     @Override
     public Result<BookDetail> run() {
-        return new Result<>(execute(this.request), BookDetail.class);
+        return new Result<>(execute(HttpMethod.DELETE), BookDetail.class);
     }
 }
