@@ -18,7 +18,7 @@ public class Query {
     }
 
     /**
-     * 获取单个用户信息
+     * 用户ID或login获取单个用户信息
      *
      * @param idOrLogin 用户ID 或 login
      * @return {@link GetUsers}
