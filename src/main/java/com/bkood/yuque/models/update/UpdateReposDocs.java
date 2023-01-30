@@ -13,7 +13,7 @@ import com.bkood.yuque.parameters.update.UpdateReposDocParameters;
  * 注意! 这里最后个参数是 id （文档编号）而不是 slug，原因是为了避免 slug 改变无法正确保存。
  *
  */
-public class UpdateReposDocs implements RequestParameters<UpdateReposDocParameters, Result<DocDetail>> {
+public class UpdateReposDocs extends RequestParameters<UpdateReposDocParameters, Result<DocDetail>> {
 
     /**
      * 请求路径

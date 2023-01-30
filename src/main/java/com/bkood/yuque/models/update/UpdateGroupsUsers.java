@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.update.UpdateGroupsUsersParameters;
  * 增加或更新组织成员
  * <a href="https://www.yuque.com/yuque/developer/group#am7zgu">Doc</a>
  */
-public class UpdateGroupsUsers implements RequestParameters<UpdateGroupsUsersParameters, Result<GroupUser>> {
+public class UpdateGroupsUsers extends RequestParameters<UpdateGroupsUsersParameters, Result<GroupUser>> {
 
     /**
      * 请求路径

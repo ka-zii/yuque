@@ -18,7 +18,7 @@ import java.util.Objects;
  * 通过封装请求接口实现解耦，如果更换工具类，用户调用部分可以不做修改
  * @param <T> 返回的泛型
  */
-public interface Request<T> {
+public abstract class Request<T> {
 
     /**
      * 声明 request
@@ -40,7 +40,7 @@ public interface Request<T> {
      *
      * @return 泛型的实体
      */
-    T run();
+    public abstract T run();
 
     /**
      * 将url拼接成整体<br/>
@@ -56,7 +56,7 @@ public interface Request<T> {
      * @param args 变量
      * @return url
      */
-    default String toUrl(String baseUrl, String url, Object... args) {
+    public String toUrl(String baseUrl, String url, Object... args) {
         return baseUrl + MessageFormat.format(url, args);
     }
 
@@ -65,7 +65,7 @@ public interface Request<T> {
      * @param method {@link HttpMethod} Http方法
      * @return {@link ResponseInfo} 返回消息
      */
-    default ResponseInfo execute(HttpMethod method) {
+    public ResponseInfo execute(HttpMethod method) {
         // 设置请求方式
         if(HttpMethod.POST.equals(method)){
             this.request.url(this.url.toString()).post(new FormBody.Builder().build());
@@ -84,7 +84,7 @@ public interface Request<T> {
      * 直接请求
      * @return {@link ResponseInfo} 返回消息
      */
-    default ResponseInfo execute() {
+    public ResponseInfo execute() {
         // 构建并发送请求
         try (Response response = client.build().newCall(this.request.build()).execute()){
             String body = Objects.requireNonNull(response.body()).string();
@@ -103,7 +103,7 @@ public interface Request<T> {
      * @param url 请求链接
      * @param config {@link Config}
      */
-    default void setConfigToRequest(String url, Config config) {
+    public void setConfigToRequest(String url, Config config) {
         // 设置URL
         this.url.append(url);
         // 设置头

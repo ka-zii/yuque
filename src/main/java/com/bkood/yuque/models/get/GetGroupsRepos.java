@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.query.QueryGroupsReposParameters;
  * 获取某个用户的知识库列表
  * <a href="https://www.yuque.com/yuque/developer/repo#9f6969e1">Doc</a>
  */
-public class GetGroupsRepos implements RequestParameters<QueryGroupsReposParameters, ResultList<Book>> {
+public class GetGroupsRepos extends RequestParameters<QueryGroupsReposParameters, ResultList<Book>> {
 
     /**
      * 请求路径

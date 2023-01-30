@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.DocDetail;
  * 删除文档 <a href="https://www.yuque.com/yuque/developer/doc#f28f9fb9">Doc</a><br/>
  * 需要 Doc 的 abilities.destroy 权限
  */
-public class DeleteReposDocs implements Request<Result<DocDetail>> {
+public class DeleteReposDocs extends Request<Result<DocDetail>> {
 
     /**
      * 请求路径

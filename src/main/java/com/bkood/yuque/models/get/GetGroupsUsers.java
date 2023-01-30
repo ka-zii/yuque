@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.query.QueryGroupsUsersParameters;
  * 获取组织成员信息
  * <a href="https://www.yuque.com/yuque/developer/group#qf4xae">Doc</a>
  */
-public class GetGroupsUsers implements RequestParameters<QueryGroupsUsersParameters, ResultList<GroupUser>> {
+public class GetGroupsUsers extends RequestParameters<QueryGroupsUsersParameters, ResultList<GroupUser>> {
 
     /**
      * 请求路径

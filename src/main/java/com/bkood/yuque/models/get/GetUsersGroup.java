@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.User;
  * 获取某个用户的加入的组织列表
  * <a href="https://www.yuque.com/yuque/developer/group#13hlny">Doc</a>
  */
-public class GetUsersGroup implements Request<ResultList<User>> {
+public class GetUsersGroup extends Request<ResultList<User>> {
 
     /**
      * 请求路径

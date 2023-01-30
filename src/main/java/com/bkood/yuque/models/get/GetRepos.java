@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.query.QueryReposParameters;
  * 获取知识库详情
  * <a href="https://www.yuque.com/yuque/developer/repo#4a6c3a3b">Doc</a>
  */
-public class GetRepos implements RequestParameters<QueryReposParameters, Result<BookDetail>> {
+public class GetRepos extends RequestParameters<QueryReposParameters, Result<BookDetail>> {
 
     /**
      * 请求路径

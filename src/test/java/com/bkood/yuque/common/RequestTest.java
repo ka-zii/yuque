@@ -14,7 +14,7 @@ public class RequestTest {
         Assert.assertEquals("https://bkood.com/a/test/b", returnUrl);
     }
 
-    public static class RequestTestUnit implements Request<Object> {
+    public static class RequestTestUnit extends Request<Object> {
 
         @Override
         public Object run() {

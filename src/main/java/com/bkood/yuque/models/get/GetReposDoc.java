@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.query.QueryReposDocParameters;
  * 获取单篇文档的详细信息
  * <a href="https://www.yuque.com/yuque/developer/doc#684fb2c5">Doc</a>
  */
-public class GetReposDoc implements RequestParameters<QueryReposDocParameters, Result<DocDetail>> {
+public class GetReposDoc extends RequestParameters<QueryReposDocParameters, Result<DocDetail>> {
 
     /**
      * 请求路径

@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.add.AddReposDocParameters;
  * 创建文档 <a href="https://www.yuque.com/yuque/developer/doc#63851c78">Doc</a> <br/>
  * 需要 Repo 的 abilities.doc.create 权限
  */
-public class AddReposDoc implements RequestParameters<AddReposDocParameters, Result<DocDetail>> {
+public class AddReposDoc extends RequestParameters<AddReposDocParameters, Result<DocDetail>> {
 
     /**
      * 请求路径

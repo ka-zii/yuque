@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bkood</groupId>
     <artifactId>yuque</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-zty-SNAPSHOT</version>
     <name>YuQue-SDK</name>
     <description>YuQue project for SDK</description>
     <url>https://github.com/ka-zii/yuque</url>
@@ -112,21 +112,21 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- 配置gpg插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            &lt;!&ndash; 配置gpg插件 &ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-gpg-plugin</artifactId>-->
+<!--                <version>1.5</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>sign-artifacts</id>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>sign</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <!-- 配置maven中央仓库地址 -->
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>

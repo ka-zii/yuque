@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.update.UpdateReposParameters;
  * 更新知识库信息 <a href="https://www.yuque.com/yuque/developer/repo#2ba1bac6">Doc</a><br/>
  * 需要 Repo 的 abilities.update 权限
  */
-public class UpdateRepos implements RequestParameters<UpdateReposParameters, Result<BookDetail>> {
+public class UpdateRepos extends RequestParameters<UpdateReposParameters, Result<BookDetail>> {
 
     /**
      * 请求路径

@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.add.AddUsersReposParameters;
  * 创建自己知识库
  * <a href="https://www.yuque.com/yuque/developer/repo#61eb4d2a">Doc</a>
  */
-public class AddUsersRepos implements RequestParameters<AddUsersReposParameters, Result<BookDetail>> {
+public class AddUsersRepos extends RequestParameters<AddUsersReposParameters, Result<BookDetail>> {
 
     /**
      * 请求路径

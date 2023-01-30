@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.add.AddGroupsReposParameters;
  * 创建团队知识库
  * <a href="https://www.yuque.com/yuque/developer/repo#61eb4d2a">Doc</a>
  */
-public class AddGroupsRepos implements RequestParameters<AddGroupsReposParameters, Result<BookDetail>> {
+public class AddGroupsRepos extends RequestParameters<AddGroupsReposParameters, Result<BookDetail>> {
 
     /**
      * 请求路径

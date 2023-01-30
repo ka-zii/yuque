@@ -18,7 +18,7 @@ import static com.bkood.yuque.common.YuQueConstants.jsonMime;
  * P 代表入参类型
  * T 代表出参类型
  */
-public interface RequestParameters<P, T> extends Request<T> {
+public abstract class RequestParameters<P, T> extends Request<T> {
 
     /**
      * 入参
@@ -35,7 +35,7 @@ public interface RequestParameters<P, T> extends Request<T> {
      * @param val 值
      * @return {@link RequestParameters}
      */
-    default RequestParameters<P, T> parameter(SFunction<P, ?> key, Object val) {
+    public RequestParameters<P, T> parameter(SFunction<P, ?> key, Object val) {
         parameters.put(getFunctionName(key), val);
         return this;
     }
@@ -47,7 +47,7 @@ public interface RequestParameters<P, T> extends Request<T> {
      * @param val map 值
      * @return {@link RequestParameters}
      */
-    default RequestParameters<P, T> parameter(String key, Object val) {
+    public RequestParameters<P, T> parameter(String key, Object val) {
         parameters.put(key, val);
         return this;
     }
@@ -57,7 +57,7 @@ public interface RequestParameters<P, T> extends Request<T> {
      * {@link #parameter(SFunction, Object)},{@link #parameter(String, Object)}}
      * @return 不可更改的属性
      */
-    default Map<String, Object> getParameters(){
+    public Map<String, Object> getParameters(){
         return Collections.unmodifiableMap(parameters);
     }
 
@@ -67,7 +67,7 @@ public interface RequestParameters<P, T> extends Request<T> {
      * @return {@link ResponseInfo} 返回消息
      */
     @Override
-    default ResponseInfo execute(HttpMethod method) {
+    public ResponseInfo execute(HttpMethod method) {
         // 设置请求方式
         if(HttpMethod.POST.equals(method)){
             this.request.url(url.toString())

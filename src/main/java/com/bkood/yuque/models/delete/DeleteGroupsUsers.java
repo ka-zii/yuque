@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.GroupUser;
  * 删除组织成员
  * <a href="https://www.yuque.com/yuque/developer/group#e90bdm">Doc</a>
  */
-public class DeleteGroupsUsers implements Request<Result<GroupUser>> {
+public class DeleteGroupsUsers extends Request<Result<GroupUser>> {
 
     /**
      * 请求路径

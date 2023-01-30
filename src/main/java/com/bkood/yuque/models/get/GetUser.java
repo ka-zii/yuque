@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.User;
  * 获取单个用户信息
  * <a href="https://www.yuque.com/yuque/developer/user#7cf55244">Doc</a>
  */
-public class GetUser implements Request<Result<User>> {
+public class GetUser extends Request<Result<User>> {
 
     /**
      * 请求路径
