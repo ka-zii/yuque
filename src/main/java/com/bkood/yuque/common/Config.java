@@ -13,11 +13,6 @@ import java.util.Map;
 public class Config {
 
     /**
-     * 为了确保我们能知道访问者是谁，API 要求必须传递 User-Agent Header，否则将会拒绝请求
-     */
-    String userAgent;
-
-    /**
      * 获取 Token 可通过点击语雀的个人头像，并进入 个人设置 页面拿到:<br/>
      * 详细介绍请访问语雀文档：<a href="https://www.yuque.com/yuque/developer/api">Overview</a>
      */

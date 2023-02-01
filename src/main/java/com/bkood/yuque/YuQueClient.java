@@ -45,12 +45,14 @@ public class YuQueClient {
         }
         // 构建基础请求头
         Map<String, String> baseHeader = new HashMap<>();
-        baseHeader.put(userAgent, config.getUserAgent());
         baseHeader.put(token, config.getToken());
         baseHeader.put(contentType, jsonMime);
         baseHeader.putAll(Optional.ofNullable(config.getHeader()).orElse(new HashMap<>(1)));
         // 构建配置
-        this.config = Config.builder().baseUrl(Optional.ofNullable(config.getBaseUrl()).orElse(BASE_URL)).userAgent(config.getUserAgent()).token(config.getToken()).header(baseHeader).build();
+        this.config = Config.builder()
+                .baseUrl(Optional.ofNullable(config.getBaseUrl()).orElse(BASE_URL))
+                .token(config.getToken())
+                .header(baseHeader).build();
     }
 
     /**
