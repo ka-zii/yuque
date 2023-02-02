@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.update;
 
+import com.bkood.yuque.common.AbstractRequestParametersData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.DocDetail;
 import com.bkood.yuque.parameters.update.UpdateReposDocParameters;
@@ -13,7 +13,7 @@ import com.bkood.yuque.parameters.update.UpdateReposDocParameters;
  * 注意! 这里最后个参数是 id （文档编号）而不是 slug，原因是为了避免 slug 改变无法正确保存。
  *
  */
-public class UpdateReposDocs implements RequestParameters<UpdateReposDocParameters, Result<DocDetail>> {
+public class UpdateReposDocs extends AbstractRequestParametersData<UpdateReposDocParameters, Result<DocDetail>> {
 
     /**
      * 请求路径

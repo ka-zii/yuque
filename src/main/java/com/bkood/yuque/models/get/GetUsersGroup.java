@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.get;
 
+import com.bkood.yuque.common.AbstractRequestData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.Request;
 import com.bkood.yuque.common.ResultList;
 import com.bkood.yuque.entity.User;
 
@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.User;
  * 获取某个用户的加入的组织列表
  * <a href="https://www.yuque.com/yuque/developer/group#13hlny">Doc</a>
  */
-public class GetUsersGroup implements Request<ResultList<User>> {
+public class GetUsersGroup extends AbstractRequestData<ResultList<User>> {
 
     /**
      * 请求路径

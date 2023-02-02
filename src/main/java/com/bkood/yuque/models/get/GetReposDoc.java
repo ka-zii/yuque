@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.get;
 
+import com.bkood.yuque.common.AbstractRequestParametersData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.DocDetail;
 import com.bkood.yuque.parameters.query.QueryReposDocParameters;
@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.query.QueryReposDocParameters;
  * 获取单篇文档的详细信息
  * <a href="https://www.yuque.com/yuque/developer/doc#684fb2c5">Doc</a>
  */
-public class GetReposDoc implements RequestParameters<QueryReposDocParameters, Result<DocDetail>> {
+public class GetReposDoc extends AbstractRequestParametersData<QueryReposDocParameters, Result<DocDetail>> {
 
     /**
      * 请求路径

@@ -37,7 +37,7 @@ public class RequestParametersTest {
             private String testBean;
     }
 
-    public static class RequestParametersTestUnit implements RequestParameters<RequestTestParameters,Object> {
+    public static class RequestParametersTestUnit extends AbstractRequestParametersData<RequestTestParameters,Object> {
 
         @Override
         public Object run() {

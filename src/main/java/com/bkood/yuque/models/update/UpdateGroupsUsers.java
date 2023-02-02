@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.update;
 
+import com.bkood.yuque.common.AbstractRequestParametersData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.GroupUser;
 import com.bkood.yuque.parameters.update.UpdateGroupsUsersParameters;
@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.update.UpdateGroupsUsersParameters;
  * 增加或更新组织成员
  * <a href="https://www.yuque.com/yuque/developer/group#am7zgu">Doc</a>
  */
-public class UpdateGroupsUsers implements RequestParameters<UpdateGroupsUsersParameters, Result<GroupUser>> {
+public class UpdateGroupsUsers extends AbstractRequestParametersData<UpdateGroupsUsersParameters, Result<GroupUser>> {
 
     /**
      * 请求路径

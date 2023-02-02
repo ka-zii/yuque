@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.delete;
 
+import com.bkood.yuque.common.AbstractRequestData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.Request;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.DocDetail;
 
@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.DocDetail;
  * 删除文档 <a href="https://www.yuque.com/yuque/developer/doc#f28f9fb9">Doc</a><br/>
  * 需要 Doc 的 abilities.destroy 权限
  */
-public class DeleteReposDocs implements Request<Result<DocDetail>> {
+public class DeleteReposDocs extends AbstractRequestData<Result<DocDetail>> {
 
     /**
      * 请求路径

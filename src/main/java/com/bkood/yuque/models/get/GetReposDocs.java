@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.get;
 
+import com.bkood.yuque.common.AbstractRequestParametersData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.ResultList;
 import com.bkood.yuque.entity.Doc;
 import com.bkood.yuque.parameters.query.QueryReposDocsParameters;
@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.query.QueryReposDocsParameters;
  * 获取一个仓库的文档列表
  * <a href="https://www.yuque.com/yuque/developer/doc#6d560c5e">Doc</a>
  */
-public class GetReposDocs implements RequestParameters<QueryReposDocsParameters, ResultList<Doc>> {
+public class GetReposDocs extends AbstractRequestParametersData<QueryReposDocsParameters, ResultList<Doc>> {
 
     /**
      * 请求路径

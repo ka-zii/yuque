@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.add;
 
+import com.bkood.yuque.common.AbstractRequestParametersData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.BookDetail;
 import com.bkood.yuque.parameters.add.AddGroupsReposParameters;
@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.add.AddGroupsReposParameters;
  * 创建团队知识库
  * <a href="https://www.yuque.com/yuque/developer/repo#61eb4d2a">Doc</a>
  */
-public class AddGroupsRepos implements RequestParameters<AddGroupsReposParameters, Result<BookDetail>> {
+public class AddGroupsRepos extends AbstractRequestParametersData<AddGroupsReposParameters, Result<BookDetail>> {
 
     /**
      * 请求路径

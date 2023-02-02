@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.add;
 
+import com.bkood.yuque.common.AbstractRequestParametersData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.RequestParameters;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.DocDetail;
 import com.bkood.yuque.parameters.add.AddReposDocParameters;
@@ -11,7 +11,7 @@ import com.bkood.yuque.parameters.add.AddReposDocParameters;
  * 创建文档 <a href="https://www.yuque.com/yuque/developer/doc#63851c78">Doc</a> <br/>
  * 需要 Repo 的 abilities.doc.create 权限
  */
-public class AddReposDoc implements RequestParameters<AddReposDocParameters, Result<DocDetail>> {
+public class AddReposDoc extends AbstractRequestParametersData<AddReposDocParameters, Result<DocDetail>> {
 
     /**
      * 请求路径

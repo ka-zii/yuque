@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.delete;
 
+import com.bkood.yuque.common.AbstractRequestData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.Request;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.BookDetail;
 
@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.BookDetail;
  * 删除知识库
  * <a href="https://www.yuque.com/yuque/developer/repo#fc1ba0e0">Doc</a>
  */
-public class DeleteRepos implements Request<Result<BookDetail>> {
+public class DeleteRepos extends AbstractRequestData<Result<BookDetail>> {
 
     /**
      * 请求路径

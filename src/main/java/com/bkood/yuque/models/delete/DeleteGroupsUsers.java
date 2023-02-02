@@ -1,8 +1,8 @@
 package com.bkood.yuque.models.delete;
 
+import com.bkood.yuque.common.AbstractRequestData;
 import com.bkood.yuque.common.Config;
 import com.bkood.yuque.common.HttpMethod;
-import com.bkood.yuque.common.Request;
 import com.bkood.yuque.common.Result;
 import com.bkood.yuque.entity.GroupUser;
 
@@ -10,7 +10,7 @@ import com.bkood.yuque.entity.GroupUser;
  * 删除组织成员
  * <a href="https://www.yuque.com/yuque/developer/group#e90bdm">Doc</a>
  */
-public class DeleteGroupsUsers implements Request<Result<GroupUser>> {
+public class DeleteGroupsUsers extends AbstractRequestData<Result<GroupUser>> {
 
     /**
      * 请求路径

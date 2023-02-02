@@ -27,6 +27,10 @@ public class YuQueClientDocTest {
                 .parameter(QueryReposDocParameters::getRaw, 1)
                 .run();
         Assert.assertEquals(200, result.getStatus());
+        result = YuQueClient.query(getConfig()).reposDoc("xiaotian-hbdyc/kb", "mir4uzerslm7n3n3")
+                .parameter(QueryReposDocParameters::getRaw, 1)
+                .run();
+        Assert.assertEquals(200, result.getStatus());
     }
 
     /**
